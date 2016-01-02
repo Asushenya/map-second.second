@@ -1,0 +1,33 @@
+void _tmain(int argc, wchar_t* argv[])
+{
+
+	map<string, int> m;
+	m.insert(pair<string,int>("Vasya", 99999));
+	m.insert(pair<string, int>("Kolya", 45));
+	m.insert(pair<string, int>("Nick", 6));
+	m.insert(pair<string, int>("Ben", 213));
+
+	for (auto i = m.begin(); i != m.end();i++)
+	{
+		cout << "key = " << i->first << ", "
+			<< "value = " << i->second << endl;
+	}
+	
+	for (auto i = m.begin(); i != m.end();)
+	{
+		if (!i->first.compare("Vasya"))
+		{
+			i = m.erase(i);
+		}
+		else i++;
+	}
+
+	cout << "---------------------" << endl;
+	for (auto i = m.begin(); i != m.end(); i++)
+	{
+		cout << "key = " << i->first << ", "
+			<< "value = " << i->second << endl;
+	}
+
+	
+}
